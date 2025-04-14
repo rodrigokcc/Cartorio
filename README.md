@@ -1,8 +1,6 @@
-# Cartorio
-![image](https://github.com/user-attachments/assets/c359d331-f831-4b44-8ade-5c477d64acbb)
 
 
-#Instruições para instalação
+# Instruções para instalação
 
 Configurar a connection string com o nome do banco criado no Postgree
 
@@ -23,3 +21,6 @@ No prompt Packdage Manager Console do Vistual Studio rodar Update-Database para 
 Após comando, se tudo der certo, encontrará as tabelas criadas no banco de dados junto com a de migrations
 
 ![image](https://github.com/user-attachments/assets/07f3da0c-edf8-4e38-9483-cd9724546f86)
+
+# Cartorio - Funcionando
+![image](https://github.com/user-attachments/assets/c359d331-f831-4b44-8ade-5c477d64acbb)
