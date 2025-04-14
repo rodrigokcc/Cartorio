@@ -6,7 +6,7 @@
     <h1 class="display-4">Relatórios</h1>
     <p style="color:#15A6B7;">Selecione o período e o formato do relatório que deseja gerar.</p>
 
-    <form method="get" asp-controller="Reports" asp-action="GetNascimentoReport">
+    <form id="reportForm" method="get" asp-controller="Reports" asp-action="GetNascimentoReport" target="_self">
         <div class="row justify-content-center mt-5">
             <div class="col-md-3">
                 <label for="relatorio" style="color:#15A6B7;">Relatório</label>
@@ -24,7 +24,7 @@
             </div>
             <div class="col-md-3">
                 <label for="formato" style="color:#15A6B7;">Formato</label>
-                <select id="formato" name="reportType" class="form-control">
+                <select id="formato" name="reportType" class="form-control" onchange="updateFormTarget()">
                     <option value="HTML">HTML</option>
                     <option value="XML">XML</option>
                 </select>
@@ -43,3 +43,23 @@
     <p style="color:#15A6B7;" class="mt-5">Sistema desenvolvido por <a href="https://demaria.com.br/" target="_blank">DeMaria</a></p>
     <p style="color:#15A6B7;">Versão 1.0.0</p>
 </div>
+
+@section Scripts {
+    <script>
+        function updateFormTarget() {
+            var reportType = document.getElementById('formato').value;
+            var form = document.getElementById('reportForm');
+
+            if (reportType === 'HTML') {
+                form.target = '_blank';
+            } else {
+                form.target = '_self';
+            }
+        }
+
+        // Set initial target on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateFormTarget();
+        });
+    </script>
+}
