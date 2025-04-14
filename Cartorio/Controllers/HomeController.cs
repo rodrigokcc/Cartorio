@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Cartorio.Data;
+using Cartorio.Interfaces;
 using Cartorio.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,13 +9,14 @@ namespace Cartorio.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly AppDbContext _context; // Contexto do banco de dados
-
-        public HomeController(ILogger<HomeController> logger, AppDbContext context)
+        private readonly ICasamentoRepository _casamentoRepository;
+        private readonly IObitoRepository _obitoRepository;
+        private readonly INascimentoRepository _nascimentoRepository;
+        public HomeController(ICasamentoRepository casamentoRepository, IObitoRepository obitoRepository, INascimentoRepository nascimentoRepository)
         {
-            _logger = logger;
-            _context = context;
+            _casamentoRepository = casamentoRepository;
+            _obitoRepository = obitoRepository;
+            _nascimentoRepository = nascimentoRepository;
         }
 
         public IActionResult Index()
@@ -47,8 +49,7 @@ namespace Cartorio.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Obitos.Add(obito); // Adiciona o registro ao banco
-                _context.SaveChanges(); // Salva as alterações
+                _obitoRepository.Add(obito); // Adiciona o registro ao banco
                 return RedirectToAction("Index"); // Redireciona para a página inicial ou outra página
             }
 
@@ -60,8 +61,7 @@ namespace Cartorio.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Casamentos.Add(casamento); // Adiciona o registro ao banco
-                _context.SaveChanges(); // Salva as alterações
+                _casamentoRepository.Add(casamento); // Adiciona o registro ao banco
                 return RedirectToAction("Index"); // Redireciona para a página inicial ou outra página
             }
 
@@ -73,8 +73,7 @@ namespace Cartorio.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Nascimentos.Add(nascimento); // Adiciona o registro ao banco
-                _context.SaveChanges(); // Salva as alterações
+                _nascimentoRepository.Add(nascimento); // Adiciona o registro ao banco
                 return RedirectToAction("Index"); // Redireciona para a página inicial ou outra página
             }
 

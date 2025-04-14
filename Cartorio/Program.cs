@@ -1,4 +1,6 @@
 using Cartorio.Data;
+using Cartorio.Interfaces;
+using Cartorio.Repository;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
@@ -7,6 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ICasamentoRepository, CasamentoRepository>();
+builder.Services.AddScoped<IObitoRepository, ObitoRepository>();
+builder.Services.AddScoped<INascimentoRepository, NascimentoRepository>();
+
+
 
 // Adicione suporte à localização
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");

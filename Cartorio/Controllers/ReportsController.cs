@@ -5,17 +5,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using Cartorio.Data; // Certifique-se de que o namespace correto para o modelo Nascimento está incluído
+using Cartorio.Data;
+using Cartorio.Interfaces; // Certifique-se de que o namespace correto para o modelo Nascimento está incluído
 
 namespace Cartorio.Controllers
 {
     public class ReportsController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly INascimentoRepository _nascimentoRepository;
 
-        public ReportsController(AppDbContext context)
+        public ReportsController(INascimentoRepository nascimentoResitory)
         {
-            _context = context;
+            _nascimentoRepository = nascimentoResitory;
         }
 
         // GET: ReportsController
@@ -25,13 +26,11 @@ namespace Cartorio.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetNascimentoReport(DateTime startDate, DateTime endDate, string reportType)
+        public async Task<IActionResult> GetNascimentoReport(DateTime startDate, DateTime endDate, string reportType)
         {
             // Filtrar os registros de nascimento no intervalo de datas
-            var nacimentos = _context.Nascimentos
-                .Where(n => n.DataDeNascimento >= startDate && n.DataDeNascimento <= endDate)
-                .ToList();
-
+            var nascimentos = await _nascimentoRepository.GetByDateRange(startDate, endDate);
+    
             if (reportType.Equals("HTML", StringComparison.OrdinalIgnoreCase))
             {
                 // Passar as datas para a view
@@ -39,14 +38,14 @@ namespace Cartorio.Controllers
                 ViewBag.EndDate = endDate;
 
                 // Retornar uma view com os dados
-                return View("NascimentoReport", nacimentos);
+                return View("NascimentoReport", nascimentos);
             }
             else if (reportType.Equals("XML", StringComparison.OrdinalIgnoreCase))
             {
                 // Gerar o arquivo XML
                 var xml = new XDocument(
                     new XElement("Nascimentos",
-                        nacimentos.Select(n => new XElement("Nascimento",
+                        nascimentos.Select(n => new XElement("Nascimento",
                             new XElement("Id", n.Id),
                             new XElement("Nome", n.NomeDoRegistrado),
                             new XElement("DataNascimento", n.DataDeNascimento.ToString("yyyy-MM-dd")),

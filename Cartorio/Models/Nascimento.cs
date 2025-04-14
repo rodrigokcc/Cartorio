@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Cartorio.Data
+namespace Cartorio.Models
 {
     public class Nascimento
     {

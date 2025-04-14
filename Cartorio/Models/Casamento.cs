@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Cartorio.Data
+namespace Cartorio.Models
 {
     public class Casamento
     {
@@ -18,22 +18,22 @@ namespace Cartorio.Data
         public DateTime DataDoCasamento { get; set; }
 
         // Dados do Cônjuge 1
-        [Required(ErrorMessage = "O nome do cônjuge 1 é obrigatório.")]
-        [MaxLength(150, ErrorMessage = "O nome do cônjuge 1 deve ter no máximo 150 caracteres.")]
+        [Required(ErrorMessage = "O nome do cônjuge é obrigatório.")]
+        [MaxLength(150, ErrorMessage = "O nome do cônjuge deve ter no máximo 150 caracteres.")]
         public required string NomeConjuge1 { get; set; }
 
-        [Required(ErrorMessage = "A data de nascimento do cônjuge 1 é obrigatória.")]
+        [Required(ErrorMessage = "A data de nascimento do cônjuge é obrigatória.")]
         [Column(TypeName = "date")]
         public DateTime DataDeNascimentoConjuge1 { get; set; }
 
-        [Required(ErrorMessage = "O CPF do cônjuge 2 é obrigatório.")]
-        [MaxLength(11, ErrorMessage = "O CPF do cônjuge 1 é inválido.")]
+        [Required(ErrorMessage = "O CPF do cônjuge é obrigatório.")]
+        [MaxLength(11, ErrorMessage = "O CPF do cônjuge é inválido.")]
         public required string CpfConjuge1 { get; set; }
 
-        [MaxLength(150, ErrorMessage = "O nome do pai do cônjuge 1 deve ter no máximo 150 caracteres.")]
+        [MaxLength(150, ErrorMessage = "O nome do pai do cônjuge deve ter no máximo 150 caracteres.")]
         public string? NomeDoPaiConjuge1 { get; set; }
 
-        [MaxLength(150, ErrorMessage = "O nome da mãe do cônjuge 1 deve ter no máximo 150 caracteres.")]
+        [MaxLength(150, ErrorMessage = "O nome da mãe do cônjuge deve ter no máximo 150 caracteres.")]
         public string? NomeDaMaeConjuge1 { get; set; }
 
         [Column(TypeName = "date")]
@@ -42,29 +42,29 @@ namespace Cartorio.Data
         [Column(TypeName = "date")]
         public DateTime? DataDeNascimentoDaMaeConjuge1 { get; set; }
 
-        [MaxLength(11, ErrorMessage = "O CPF do pai do cônjuge 1 é inválido.")]
+        [MaxLength(11, ErrorMessage = "O CPF do pai do cônjuge é inválido.")]
         public string? CpfDoPaiConjuge1 { get; set; }
 
-        [MaxLength(11, ErrorMessage = "O CPF da mãe do cônjuge 1 é inválido.")]
+        [MaxLength(11, ErrorMessage = "O CPF da mãe do cônjuge é inválido.")]
         public string? CpfDaMaeConjuge1 { get; set; }
 
         // Dados do Cônjuge 2
-        [Required(ErrorMessage = "O nome do cônjuge 2 é obrigatório.")]
-        [MaxLength(150, ErrorMessage = "O nome do cônjuge 2 deve ter no máximo 150 caracteres.")]
+        [Required(ErrorMessage = "O nome do cônjuge é obrigatório.")]
+        [MaxLength(150, ErrorMessage = "O nome do cônjuge deve ter no máximo 150 caracteres.")]
         public required string NomeConjuge2 { get; set; }
 
-        [Required(ErrorMessage = "A data de nascimento do cônjuge 2 é obrigatória.")]
+        [Required(ErrorMessage = "A data de nascimento do cônjuge é obrigatória.")]
         [Column(TypeName = "date")]
         public DateTime DataDeNascimentoConjuge2 { get; set; }
 
-        [Required(ErrorMessage = "O CPF do cônjuge 2 é obrigatório.")]
-        [MaxLength(11, ErrorMessage = "O CPF do cônjuge 2 é inválido.")]
+        [Required(ErrorMessage = "O CPF do cônjuge é obrigatório.")]
+        [MaxLength(11, ErrorMessage = "O CPF do cônjuge é inválido.")]
         public required string CpfConjuge2 { get; set; }
 
-        [MaxLength(150, ErrorMessage = "O nome do pai do cônjuge 2 deve ter no máximo 150 caracteres.")]
+        [MaxLength(150, ErrorMessage = "O nome do pai do cônjuge deve ter no máximo 150 caracteres.")]
         public string? NomeDoPaiConjuge2 { get; set; }
 
-        [MaxLength(150, ErrorMessage = "O nome da mãe do cônjuge 2 deve ter no máximo 150 caracteres.")]
+        [MaxLength(150, ErrorMessage = "O nome da mãe do cônjuge deve ter no máximo 150 caracteres.")]
         public string? NomeDaMaeConjuge2 { get; set; }
 
         [Column(TypeName = "date")]
@@ -73,10 +73,10 @@ namespace Cartorio.Data
         [Column(TypeName = "date")]
         public DateTime? DataDeNascimentoDaMaeConjuge2 { get; set; }
 
-        [MaxLength(11, ErrorMessage = "O CPF do pai do cônjuge 2 é inválido.")]
+        [MaxLength(11, ErrorMessage = "O CPF do pai do cônjuge é inválido.")]
         public string? CpfDoPaiConjuge2 { get; set; }
 
-        [MaxLength(11, ErrorMessage = "O CPF da mãe do cônjuge 2 é inválido.")]
+        [MaxLength(11, ErrorMessage = "O CPF da mãe do cônjuge é inválido.")]
         public string? CpfDaMaeConjuge2 { get; set; }
     }
 }
