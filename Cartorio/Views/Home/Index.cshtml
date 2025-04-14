@@ -7,26 +7,32 @@
     <p style="color:#15A6B7;">Sistema para cartórios de Registro Civil e Tabelionatos de Notas.</p>
 
     <div class="row justify-content-center mt-5">
-        <div class="col-md-4 text-center">
-            <a href="/Page1">
-                <img src ="~/images/nascimento.png" alt="Imagem 1" class="img-fluid" />
+        <div class="col-md-3 text-center">
+            <a asp-controller="Home" asp-action="Nascimento">
+                <img src ="~/images/nascimento.png" alt="Nascimento" class="img-fluid" />
                 <h5 class="mt-2">Nascimento</h5>
             </a>
         </div>
-        <div class="col-md-4 text-center">
-            <a href="/Page2">
-                <img src="~/images/casamento.png" alt="Imagem 2" class="img-fluid" />
+        <div class="col-md-3 text-center">
+            <a  asp-controller="Home" asp-action="Casamento" >
+                <img src="~/images/casamento.png" alt="Casamento" class="img-fluid" />
                 <h5 class="mt-2">Casamento</h5>
             </a>
         </div>
-        <div class="col-md-4 text-center">
-            <a href="/Page3">
-                <img src="~/images/obito.png" alt="Imagem 3" class="img-fluid" />
+        <div class="col-md-3 text-center">
+            <a  asp-controller="Home" asp-action="Obito">
+                <img src="~/images/obito.png" alt="Obito" class="img-fluid" />
                 <h5 class="mt-2">Óbito</h5>
             </a>
         </div>
+        <div class="col-md-3 text-center">
+            <a asp-controller="Reports" asp-action="Reports">
+                <img src="~/images/relatorios.png" alt="Relatorios" class="img-fluid" />
+                <h5 class="mt-2">Relatórios</h5>
+            </a>
+        </div>
     </div>
-
+    <br />
     <p style="color:#15A6B7;">Sistema desenvolvido por <a href="https://demaria.com.br/" target="_blank">DeMaria</a></p>
 
 

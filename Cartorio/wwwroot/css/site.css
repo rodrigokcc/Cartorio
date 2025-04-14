@@ -20,3 +20,7 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.text-primary-custom {
+    color: #15A6B7;
+}

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Cartorio.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250411035708_init")]
+    [Migration("20250413225235_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -44,22 +44,18 @@ namespace Cartorio.Migrations
                         .HasColumnType("character varying(11)");
 
                     b.Property<string>("CpfDaMaeConjuge1")
-                        .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("character varying(11)");
 
                     b.Property<string>("CpfDaMaeConjuge2")
-                        .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("character varying(11)");
 
                     b.Property<string>("CpfDoPaiConjuge1")
-                        .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("character varying(11)");
 
                     b.Property<string>("CpfDoPaiConjuge2")
-                        .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("character varying(11)");
 
@@ -98,22 +94,18 @@ namespace Cartorio.Migrations
                         .HasColumnType("character varying(150)");
 
                     b.Property<string>("NomeDaMaeConjuge1")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
                     b.Property<string>("NomeDaMaeConjuge2")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
                     b.Property<string>("NomeDoPaiConjuge1")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
                     b.Property<string>("NomeDoPaiConjuge2")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
@@ -131,12 +123,10 @@ namespace Cartorio.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CpfDaMae")
-                        .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("character varying(11)");
 
                     b.Property<string>("CpfDoPai")
-                        .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("character varying(11)");
 
@@ -153,12 +143,10 @@ namespace Cartorio.Migrations
                         .HasColumnType("date");
 
                     b.Property<string>("NomeDaMae")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
                     b.Property<string>("NomeDoPai")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
@@ -196,7 +184,6 @@ namespace Cartorio.Migrations
                         .HasColumnType("date");
 
                     b.Property<string>("NomeDaMae")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
@@ -206,7 +193,6 @@ namespace Cartorio.Migrations
                         .HasColumnType("character varying(150)");
 
                     b.Property<string>("NomeDoPai")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 

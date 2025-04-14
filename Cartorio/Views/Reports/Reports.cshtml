@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Relatórios";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Relatórios</h1>
+    <p style="color:#15A6B7;">Selecione o período e o formato do relatório que deseja gerar.</p>
+
+    <form method="get" asp-controller="Reports" asp-action="GetNascimentoReport">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-3">
+                <label for="relatorio" style="color:#15A6B7;">Relatório</label>
+                <select id="relatorio" name="relatorio" class="form-control">
+                    <option value="nascimento">Nascimentos</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="dataInicial" style="color:#15A6B7;">Data Inicial</label>
+                <input type="date" id="dataInicial" name="startDate" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label for="dataFinal" style="color:#15A6B7;">Data Final</label>
+                <input type="date" id="dataFinal" name="endDate" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label for="formato" style="color:#15A6B7;">Formato</label>
+                <select id="formato" name="reportType" class="form-control">
+                    <option value="HTML">HTML</option>
+                    <option value="XML">XML</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary btn-block" style="background-color:#15A6B7; border-color:#15A6B7;">
+                    Criar Relatório
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <p style="color:#15A6B7;" class="mt-5">Sistema desenvolvido por <a href="https://demaria.com.br/" target="_blank">DeMaria</a></p>
+    <p style="color:#15A6B7;">Versão 1.0.0</p>
+</div>

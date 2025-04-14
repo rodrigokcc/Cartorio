@@ -23,21 +23,21 @@ namespace Cartorio.Migrations
                     NomeConjuge1 = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
                     DataDeNascimentoConjuge1 = table.Column<DateTime>(type: "date", nullable: false),
                     CpfConjuge1 = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false),
-                    NomeDoPaiConjuge1 = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
-                    NomeDaMaeConjuge1 = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
+                    NomeDoPaiConjuge1 = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: true),
+                    NomeDaMaeConjuge1 = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: true),
                     DataDeNascimentoDoPaiConjuge1 = table.Column<DateTime>(type: "date", nullable: true),
                     DataDeNascimentoDaMaeConjuge1 = table.Column<DateTime>(type: "date", nullable: true),
-                    CpfDoPaiConjuge1 = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false),
-                    CpfDaMaeConjuge1 = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false),
+                    CpfDoPaiConjuge1 = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: true),
+                    CpfDaMaeConjuge1 = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: true),
                     NomeConjuge2 = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
                     DataDeNascimentoConjuge2 = table.Column<DateTime>(type: "date", nullable: false),
                     CpfConjuge2 = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false),
-                    NomeDoPaiConjuge2 = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
-                    NomeDaMaeConjuge2 = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
+                    NomeDoPaiConjuge2 = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: true),
+                    NomeDaMaeConjuge2 = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: true),
                     DataDeNascimentoDoPaiConjuge2 = table.Column<DateTime>(type: "date", nullable: true),
                     DataDeNascimentoDaMaeConjuge2 = table.Column<DateTime>(type: "date", nullable: true),
-                    CpfDoPaiConjuge2 = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false),
-                    CpfDaMaeConjuge2 = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false)
+                    CpfDoPaiConjuge2 = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: true),
+                    CpfDaMaeConjuge2 = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -53,12 +53,12 @@ namespace Cartorio.Migrations
                     DataDoRegistro = table.Column<DateTime>(type: "date", nullable: false),
                     DataDeNascimento = table.Column<DateTime>(type: "date", nullable: false),
                     NomeDoRegistrado = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
-                    NomeDoPai = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
-                    NomeDaMae = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
+                    NomeDoPai = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: true),
+                    NomeDaMae = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: true),
                     DataDeNascimentoDoPai = table.Column<DateTime>(type: "date", nullable: true),
                     DataDeNascimentoDaMae = table.Column<DateTime>(type: "date", nullable: true),
-                    CpfDoPai = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false),
-                    CpfDaMae = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false)
+                    CpfDoPai = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: true),
+                    CpfDaMae = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -75,8 +75,8 @@ namespace Cartorio.Migrations
                     DataDoObito = table.Column<DateTime>(type: "date", nullable: false),
                     NomeDoFalecido = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
                     DataDeNascimento = table.Column<DateTime>(type: "date", nullable: false),
-                    NomeDoPai = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
-                    NomeDaMae = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
+                    NomeDoPai = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: true),
+                    NomeDaMae = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: true),
                     DataDeNascimentoDoPai = table.Column<DateTime>(type: "date", nullable: true),
                     DataDeNascimentoDaMae = table.Column<DateTime>(type: "date", nullable: true)
                 },
